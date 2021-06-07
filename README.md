@@ -4,7 +4,11 @@
 A summary of data structures, algorithms, discussion of their time and space complexities, and their implementations in Java.
 
 ## Data Structures
-A data structure organizes data so that it can be used effectively. They help to manage and organize data, make writing code cleaner and easier to understand, and they are essential for creating fast and powerful algorithms.
+A data structure organizes data so that it can be used effectively. They help to manage and organize data, make writing code cleaner and easier to understand, and they are essential for creating fast and powerful algorithms. All data structures have four main operations:
+- **Access**: and read values stored in the data structure.
+- **Search**: for arbitrary values in the data structure.
+- **Insert**: values at any point in the data structure.
+- **Delete**: values in the data structure.
 
 ### Arrays (Static Arrays)
 An **array** is a container of fixed length containing `n` elements which can be indexed from the range `[0, n-1]`. Each **element** within an array is referenced by a number which is its **index**. All memory blocks storing the addresses of the elements are contiguous, or next to each other.
@@ -29,8 +33,25 @@ A DynamicArray was made using the native static Arrays in Java. It can take any 
 
 
 ### Linked Lists
+A **Linked List** is a linear data structure, a sequential list, where each element in the list is contained within an object called a **Node**. A node contains two pieces of information: a data item, and a **pointer**/reference to the next node in the list. The **Head** is the first node in the linked list, while the **Tail** is the last node in the linked list, and does not point to anything (or points to `None` or `null`). 
 
+In a  **Singly-linked List**, each node stores a reference to the next node whereas in a **Doubly-linked List**, each node stores references to both the next node and the previous node. Linked lists are used in List, Queue, Stack, circular list implementations, and for separate chaining in HashTable implementations to deal with hash collisions.
 
+When performing a data structure operation on linked lists, we keep track of the head node pointer (and sometimes the tail node pointer as well), and initialize a new pointer to traverse the linked list as the very first step. The performance of the operation depends on how far the the new pointer has to traverse to carry out the operation.
+
+#### Complexity
+
+Singly-linked Lists:
+1. **Access** is `O(n)`. Linked lists don't have indices so to access an element, we need to traverse through with a pointer.
+2. **Search** is `O(n)`. Similar to accessing, searching for an element in a linked-list requires traversal.
+3. **Insert** is `O(n)` or `O(1)`. If inserting at the head/tail, it takes constant time, otherwise, it takes linear time.
+4. **Delete** is `O(n)` or `O(1)`. If deleting at the head, it takes constant time, otherwise, it takes linear time. This is because after deleting the tail, we need to assign a new tail to the previous node of the old tail, and to do that we need to access the data contained within the old tail's previous node.
+
+Doubly-linked Lists:
+1. **Access** is `O(n)`. Same as singly-linked list.
+2. **Search** is `O(n)`. Same as singly-linked list.
+3. **Insert** is `O(n)` or `O(1)`. Same as singly-linked list.
+4. **Delete** is `O(n)` or `O(1)`. If deleting at the head/tail, it takes constant time, otherwise, it takes linear time.
 
 ## Algorithms
 

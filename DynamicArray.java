@@ -111,13 +111,69 @@ public class DynamicArray<T> implements Iterable<T> {
         return element;
     }
 
+    public boolean remove(Object obj) {
+        /** Remove element if it exists in the array, returning a boolean */
+        for (int i = 0; i < length; i++) {
+            if (array[i].equals( obj)) {
+                pop(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int indexOf(Object obj) {
+        /** Returns the index of object if it exists in array */
+        for (int i = 0; i < length; i++) {
+            if (array[i].equals(obj)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public boolean contains(Object obj) {
+        /** Returns boolean to indicate if array contains the specified object */
+        return indexOf(obj) != -1;
+    }
     
 
     @Override
     public Iterator<T> iterator() {
-        /**What is this I don't know */
-        // TODO Auto-generated method stub
-        return null;
+        /** Method to return an iterator object */
+        return new Iterator<T>() {
+            int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < length;
+            }
+
+            @Override
+            public T next() {
+                /** Returns next element in array and increments index by 1 */
+                return array[index++];
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+        };
     }
 
+    @Override
+    public String toString() {
+        /** Returns the string representation of array */
+        if (length == 0) {
+            return "[]";
+        }
+        else {
+            StringBuilder sb = new StringBuilder(length).append("[");
+            for (int i = 0; i < length - 1; i++) {
+                sb.append(array[i] + ", ");
+            }
+            return sb.append(array[length - 1] + "]").toString();
+        }
+    }
 }

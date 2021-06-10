@@ -38,6 +38,7 @@ class LinkedList:
                 nodeList.append(f"[Tail: {pointer.data}]")
             else:
                 nodeList.append(f"[{pointer.data}]")
+            pointer = pointer.nextNode
         
         return "-> ".join(nodeList)
     
@@ -68,17 +69,14 @@ class LinkedList:
         
         newNode = Node(element)
         if index == 0:
-            newNode.next = self.head
+            newNode.nextNode = self.head
             self.head = newNode
         else:
             pointer = self.head
-            if pointer is None:
-                self.head = newNode
-            else:
-                for i in range(index - 1):
-                    pointer = pointer.nextNode
-                newNode.nextNode = pointer.nextNode
-                pointer.nextNode = newNode
+            for i in range(index - 1):
+                pointer = pointer.nextNode
+            newNode.nextNode = pointer.nextNode
+            pointer.nextNode = newNode
         self.size += 1
     
     

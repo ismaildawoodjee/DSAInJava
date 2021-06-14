@@ -53,7 +53,52 @@ Doubly-linked Lists:
 3. **Insert** is `O(n)` or `O(1)`. Same as singly-linked list.
 4. **Delete** is `O(n)` or `O(1)`. If deleting at the head/tail, it takes constant time, otherwise, it takes linear time.
 
+### Stacks
+
+A **stack** is a linear data structure, which models a real world stack (like a
+stack of books/plates) and has two primary operations: `push` and `pop`. These
+operations only occur at the top of the stack, following the LIFO (Last In 
+First Out) principle. In LIFO, elements that are last added to the top of the 
+stack (Last In) are the ones that get removed first (First Out). Stacks are 
+usually implemented using Linked Lists (there is always a pointer at the top of
+the stack). They are used in redo-undo mechanisms, recursive programming, and 
+for the Depth First Search (DFS) graph traversal algorithm.
+
+#### Complexity
+
+1. **Access** (`peek`) is `O(1)`. Peeking at the top of the stack occurs in
+constant time.
+2. **Search** is `O(n)`. Searching through the stack takes linear time because
+the required element might be at the bottom of the stack.
+3. **Insert** (`push`) is `O(1)`. Pushing a new element to the top of the stack
+takes constant time.
+4. **Delete** (`pop`) is `O(1)`. Removing an element from the top takes `O(1)`.
+
+### Queues
+
+A **queue** is a linear data structure, modelling a real world queue (e.g.
+waiting lines) and has two primary operations: `enqueue` and `dequeue`. Enqueue
+happens at the start while dequeue happens at the end, following the First In
+First Out (FIFO) principle, or First-Come First-Served. The very first element
+that gets added to the queue is also the element that gets removed first.
+
+Queues are implemented using Doubly Linked Lists and have pointers at 
+both the start and end. They are used in web server request management, where
+the client that requests first, gets served first. Also used in the Breadth
+First Search (BFS) graph traversal algorithm.
+
+#### Complexity
+
+1. **Acess** (`peek`) is `O(1)`. Peeking at the start takes constant time
+because there is a pointer at the queue's head.
+2. **Search** is `O(n)`. Same as a stack.
+3. **Insert** (`enqueue`) is `O(1)`. Adding an element at the head takes
+constant time, same as a Doubly Linked List.
+4. **Delete** (`dequeue`) is `O(1)`. Removing an element from the tail of the
+queue takes constant time.
+
 ## Algorithms
+
 
 
 ### Linear Search

@@ -20,7 +20,18 @@ public class Main {
         System.out.println(array);
         array.clear();
         System.out.println(array);
+        System.out.println();
 
+        Stack<String> stack = new Stack<String>("elem1");
+        stack.push("elem2");
+        stack.push("elem3");
+        stack.push("elem4");
+        System.out.println(stack.toString());
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+        System.out.println(stack.search("elem1"));
+        System.out.println(stack.toString());
+        
         
     }
 }

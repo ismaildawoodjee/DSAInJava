@@ -12,7 +12,7 @@ public class Stack<T> implements Iterable<T> {
     private LinkedList<T> list = new LinkedList<T>();
 
     public Stack() {
-        /** Default constructor for to initialize an empty Stack */
+        /** Default constructor to initialize an empty Stack */
     }
 
     public Stack (T firstElem) {

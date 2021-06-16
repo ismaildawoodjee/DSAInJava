@@ -2,7 +2,6 @@ import DataStructures.DynamicArray;
 import DataStructures.Queue;
 import DataStructures.Stack;
 
-
 /**
  * Main
  */

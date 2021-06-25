@@ -4,6 +4,7 @@
 A summary of data structures, algorithms, discussion of their time and space 
 complexities, and their implementations in Java.
 
+- Images/GIFs
 - Contents
 
 ## Data Structures
@@ -165,6 +166,11 @@ general, height of a tree is the number of edges on the longest possible path
 down towards a leaf node. **Depth** of a particular node is the number of edges
 required to get from that node to the root node.
 
+Trees are used quite a lot in real world applications. File systems are trees,
+Reddit comments can be represented as trees, nested JSON files are trees, and
+Google Maps uses graphs to provide the user with paths from initial to terminal
+locations (graphs are a superset of trees).
+
 ### Binary (Search) Trees
 
 A **binary tree** is a tree for which every node has at most two child nodes.
@@ -221,6 +227,10 @@ element violates the recursive property, swap the element with its parent.
 4. **Delete** (`dequeue`) is `O(log n)`. Takes log time, because after removing
 the root node, the heap has to be shuffled back to satisfy the recursive
 property. Naive removal takes `O(n)`.
+
+### Hash Tables
+
+
 
 ## Algorithms
 

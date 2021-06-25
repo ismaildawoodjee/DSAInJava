@@ -51,26 +51,28 @@ public class Main {
         // System.out.println(queue.toString());
         // System.out.println();
 
-        BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>();
-        System.out.println(bst.isEmpty());
-        System.out.println(bst.size());
-        System.out.println(bst.height());
-        System.out.println(bst.add(51));
-        System.out.println(bst.add(60));
-        System.out.println(bst.add(42));
-        System.out.println(bst.isEmpty());
-        System.out.println(bst.size());
-        System.out.println(bst.height());
-        System.out.println(bst.add(36));
-        System.out.println(bst.add(75));
-        System.out.println(bst.add(72));
-        System.out.println(bst.add(72));
-        System.out.println(bst.add(36));
-        System.out.println(bst.add(24));
-        System.out.println(bst.add(-10));
-        System.out.println(bst.size());
-        System.out.println(bst.height());
-        System.out.println(bst.remove(75));
-        System.out.println(bst.height());
+        // BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>();
+        // System.out.println(bst.isEmpty());
+        // System.out.println(bst.size());
+        // System.out.println(bst.height());
+        // System.out.println(bst.add(51));
+        // System.out.println(bst.add(60));
+        // System.out.println(bst.add(42));
+        // System.out.println(bst.isEmpty());
+        // System.out.println(bst.size());
+        // System.out.println(bst.height());
+        // System.out.println(bst.add(36));
+        // System.out.println(bst.add(75));
+        // System.out.println(bst.add(72));
+        // System.out.println(bst.add(72));
+        // System.out.println(bst.add(36));
+        // System.out.println(bst.add(24));
+        // System.out.println(bst.add(-10));
+        // System.out.println(bst.size());
+        // System.out.println(bst.height());
+        // System.out.println(bst.remove(75));
+        // System.out.println(bst.height());
+
+        
     }
 }

@@ -230,7 +230,64 @@ property. Naive removal takes `O(n)`.
 
 ### Hash Tables
 
+**Hash Tables** allow very fast retrieval of data, independent of the amount of
+data there is. Widely used in database indexing, caching, compiling programs,
+error checking, password authentication and more. If we know the index of an element in a hash table,
+we can immediately look up the element in `O(1)` constant time. Usually, each
+index is calculated using the value of the element(s) themselves, which is done
+using a **hash function**. Hash tables are often used to store key-value pairs
+(or a hashmap), so that for each key, we can store as much data as possible.
 
+A hashing algorithm (or hash function) transforms the key into an address in 
+memory. A simple example is 
+
+    address = key Mod(n),
+
+where `n` is the number of available addresses. **Hash collisions** occur when 
+two different keys have the same index number. This can be resolved using two 
+different techniques: **open addressing** and **closed addressing**. 
+
+**Open addressing** resolves hash collisions by placing an element somewhere
+other than its calculated address - every location is open to any item. 
+
+- Linear probing (`pointer += 1`): if the address is occupied, a linear search is done to find
+the next available slot. Sometimes, the size of the hashmap is scaled to be 
+larger than the amount of elements that are stored there, measured with the
+**load factor**:
+
+    load factor = total number of items stored / size of hashmap
+
+- Plus 3 rehash (`pointer += 3`): instead of searching for the next available slot, we look at
+every third slot from the collision.
+
+- Quadratic probing (`pointer = pointer ** 2`): unlike linear probing, quadratic 
+probing keeps squaring the search pointer to find the next available slot.
+
+- Double hashing: uses a second hash function to calculate a new address when 
+a collision occurs.
+
+**Closed addressing** or **chaining** resolves hash collisions by linking 
+together items with the same address, usually via a Linked List. To find an 
+item, traverse the linked list at the calculated address. 
+
+A good hash function should:
+
+- Minimize collisions
+- Have a uniform distribution of hash values
+- Be easy to calculate
+- Resolve any collisions
+
+#### Complexity
+
+All operations occur in constant time, in the best case scenario when there
+are no collisions. Otherwise, a linear search or linked list traversal is
+required, which is on the order of how long it takes to search through elements
+with the same index.
+
+1. **Access** is `O(1)`.
+2. **Search** is `O(1)`. 
+3. **Insert** is `O(1)`. 
+4. **Delete** is `O(1)`.
 
 ## Algorithms
 
@@ -252,6 +309,10 @@ property. Naive removal takes `O(n)`.
 
 
 
+### Graph Traversals
+
+
+
 ### Merge Sort
 
 
@@ -266,3 +327,13 @@ property. Naive removal takes `O(n)`.
 them into a min or max heap, and then removes the root node continuously to
 make a sorted list. Building the heap takes `O(n)` and heapifying (reshuffling)
 the heap after removal takes `O(log n)`, so overall performance is `O(n log n)`
+
+### Inefficient Sorts
+
+#### Selection Sort
+
+
+
+#### Bubble Sort
+
+

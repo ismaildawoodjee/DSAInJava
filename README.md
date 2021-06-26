@@ -5,9 +5,47 @@ A summary of data structures, algorithms, discussion of their time and space
 complexities, and their implementations in Java.
 
 - Images/GIFs
-- Contents
 
+## Contents
+
+- [Data Structures](#ds)
+    - [Arrays](#arr)
+        - [Complexity](#acomp)
+    - [Array Lists](#alist)
+        - [Code](#code)
+        - [Complexity](#alcomp)
+    - [Linked Lists](#ll)
+        - [Complexity](#llcomp)
+    - [Stacks](#stack)
+        - [Complexity](#scomp)
+    - [Queues](#queue)
+        - [Priority Queues](#pq)
+        - [Complexity](#qcomp)
+    - [Trees](#tree)
+    - [Binary (Search) Trees](#btree)
+        - [Complexity](#btcomp)
+        - [Tries](#trie)
+    - [Heaps](#heap)
+        - [Complexity](#hcomp)
+    - [Hash Tables](#ht)
+        - [Complexity](#htcomp)
+- [Algorithms](#algo)
+    - [Linear Search](#lsearch)
+    - [Binary Search](#bsearch)
+    - [Breadth-First Search](#bfs)
+    - [Depth-First Search](#dfs)
+    - [Graph Traversals](#gt)
+    - [Merge Sort](#msort)
+    - [Quicks Sort](#qsort)
+    - [Heap Sort](#hsort)
+    - [Inefficient Sorts](#iesort)
+        - [Selection Sort](#ssort)
+        - [Bubble Sort](#bsort)
+
+
+<a name="ds"></a>
 ## Data Structures
+
 A data structure organizes data so that it can be used effectively. They help 
 to manage and organize data, make writing code cleaner and easier to 
 understand, and they are essential for creating fast and powerful algorithms. 
@@ -18,31 +56,41 @@ All data structures have four main operations:
 - **Insert**: values at any point in the data structure.
 - **Delete**: values in the data structure.
 
+<a name="arr"></a>
 ### Arrays (Static Arrays)
+
 An **array** is a container of fixed length containing `n` elements which can
 be indexed from the range `[0, n-1]`. Each **element** within an array is 
 referenced by a number which is its **index**. All memory blocks storing the 
 addresses of the elements are contiguous, or next to each other.
 
+<a name="acomp"></a>
 #### Complexity
+
 1. **Access** is `O(1)`. Each element in an array is indexed, so we can quickly
  access an element using its index.
 2. **Search** is `O(n)`. In the worst case, we have to traverse through the 
 entire array to find an element we want at the very end.
 
+<a name="alist"></a>
 ### Array Lists (Dynamic Arrays or Lists)
+
 **ArrayLists** (in Java) or Dynamic Arrays or Lists (in Python) are similar to 
 arrays, except that their size is not fixed. Their size can dynamically change
 depending on how many elements are inserted or deleted from it.
 
+<a name="code"></a>
 #### Code
+
 A DynamicArray was made using the native static Arrays in Java. It can take any 
 generic type, denoted by `<T>` and using `implements Iterable<T>` allows us to
 create this custom data structure as an **iterable**, which means we can use a
 `for` loop to iterate through the elements of an object of this DynamicArray 
 class.
 
+<a name="alcomp"></a>
 #### Complexity
+
 1. **Access** is `O(1)`. Like the Array, an ArrayList's elements can also be 
 accessed in constant time using its index.
 2. **Search** is `O(n)`. Similar to the Array, we need to traverse through the 
@@ -55,7 +103,9 @@ ArrayList, which takes constant time only.
 5. **Delete** is `O(n)`. Similar to insertion, deletion takes linear time, 
 because elements will need to be shifted.
 
+<a name="ll"></a>
 ### Linked Lists
+
 A **Linked List** is a linear data structure, a sequential list, where each 
 element in the list is contained within an object called a **Node**. A node 
 contains two pieces of information: a data item, and a **pointer**/reference to
@@ -75,6 +125,7 @@ initialize a new pointer to traverse the linked list as the very first step.
 The performance of the operation depends on how far the the new pointer has to
 traverse to carry out the operation.
 
+<a name="llcomp"></a>
 #### Complexity
 
 Singly-linked Lists:
@@ -96,6 +147,7 @@ Doubly-linked Lists:
 4. **Delete** is `O(n)` or `O(1)`. If deleting at the head/tail, it takes 
 constant time, otherwise, it takes linear time.
 
+<a name="stack"></a>
 ### Stacks
 
 A **stack** is a linear data structure, which models a real world stack (like a
@@ -107,6 +159,7 @@ usually implemented using Linked Lists (there is always a pointer at the top of
 the stack). They are used in redo-undo mechanisms, recursive programming, and 
 for the Depth First Search (DFS) graph traversal algorithm.
 
+<a name="scomp"></a>
 #### Complexity
 
 1. **Access** (`peek`) is `O(1)`. Peeking at the top of the stack occurs in
@@ -117,6 +170,7 @@ the required element might be at the bottom of the stack.
 takes constant time.
 4. **Delete** (`pop`) is `O(1)`. Removing an element from the top takes `O(1)`.
 
+<a name="queue"></a>
 ### Queues
 
 A **queue** is a linear data structure, modelling a real world queue (e.g.
@@ -130,6 +184,7 @@ both the start and end. They are used in web server request management, where
 the client that requests first, gets served first. Also used in the Breadth
 First Search (BFS) graph traversal algorithm.
 
+<a name="pq"></a>
 #### Priority Queues
 
 **Priority Queues** (PQ): are data structures in which the order of dequeuing
@@ -138,6 +193,7 @@ with the highest priority gets removed first. PQs are usually implemented using
 binary **heaps**, which are tree data structures. Example: computers use PQs to
 designate tasks and assign computing power based on how urgent the task is.
 
+<a name="qcomp"></a>
 #### Complexity
 
 1. **Acess** (`peek`) is `O(1)`. Peeking at the start takes constant time
@@ -148,6 +204,7 @@ constant time, same as a Doubly Linked List.
 4. **Delete** (`dequeue`) is `O(1)`. Removing an element from the tail of the
 queue takes constant time. Otherwise, it takes `O(n)`, linear time.
 
+<a name="tree"></a>
 ### Trees
 
 **Trees** are non-linear data structures that store data hierarchically. They
@@ -171,6 +228,7 @@ Reddit comments can be represented as trees, nested JSON files are trees, and
 Google Maps uses graphs to provide the user with paths from initial to terminal
 locations (graphs are a superset of trees).
 
+<a name="btree"></a>
 ### Binary (Search) Trees
 
 A **binary tree** is a tree for which every node has at most two child nodes.
@@ -181,6 +239,7 @@ elements than the current node and right subtree must have larger elements.
 Duplicate values are usually not allowed in BSTs. **BST Invariant**: left
 subtree has smaller elements and right subtree has larger elements.
 
+<a name="btcomp"></a>
 #### Complexity
 
 1. **Access** is `O(log n)`. In the worst case, a BST is completely linear and
@@ -201,6 +260,7 @@ Deleting/removing an element from a BST is a two step process, where the first
 step is to search for the element to be removed, and the second step is to
 replace it with a successor node, while maintaining the BST invariant.
 
+<a name="trie"></a>
 #### Tries
 
 **Tries** are trees that only contain alphabetical characters. The name comes
@@ -208,7 +268,8 @@ from reTRIEval, where tries are usually used for constructing strings of words,
 allowing us to reTRIEve words by traversing down a particular path. Useful for
 spellchecking, autocorrect and predicting words.
 
-#### Heaps
+<a name="heap"></a>
+### Heaps
 
 **Heaps** are tree-based data structures that can be defined recursively: if A
 is a parent node of B then A is ordered (either greater/less than) with respect
@@ -217,6 +278,7 @@ the minimum out of all its children, and this is recursively true for all
 subsequent parent nodes in the heap. Likewise for **max-heaps**. Constructing a
 binary heap takes `O(n)` linear time.
 
+<a name="hcomp"></a>
 #### Complexity
 
 1. **Access** (`peek`) is `O(1)`. Peeking at the top of a heap takes constant
@@ -228,6 +290,7 @@ element violates the recursive property, swap the element with its parent.
 the root node, the heap has to be shuffled back to satisfy the recursive
 property. Naive removal takes `O(n)`.
 
+<a name="ht"></a>
 ### Hash Tables
 
 **Hash Tables** allow very fast retrieval of data, independent of the amount of
@@ -277,6 +340,7 @@ A good hash function should:
 - Be easy to calculate
 - Resolve any collisions
 
+<a name="htcomp"></a>
 #### Complexity
 
 All operations occur in constant time, in the best case scenario when there
@@ -289,38 +353,41 @@ with the same index.
 3. **Insert** is `O(1)`. 
 4. **Delete** is `O(1)`.
 
+<a name="algo"></a>
 ## Algorithms
 
 
-
+<a name="lsearch"></a>
 ### Linear Search
 
 
-
+<a name="bsearch"></a>
 ### Binary Search
 
 
-
+<a name="bfs"></a>
 ### Breadth-First Search
 
 
-
+<a name="dfs"></a>
 ### Depth-First Search
 
 
 
+<a name="gt"></a>
 ### Graph Traversals
 
 
-
+<a name="msort"></a>
 ### Merge Sort
 
 
-
+<a name="qsort"></a>
 ### Quick Sort
 
 
 
+<a name="hsort"></a>
 ### Heap Sort
 
 **Heap sort** is a sorting algorithm which takes in a list of elements, builds
@@ -328,12 +395,15 @@ them into a min or max heap, and then removes the root node continuously to
 make a sorted list. Building the heap takes `O(n)` and heapifying (reshuffling)
 the heap after removal takes `O(log n)`, so overall performance is `O(n log n)`
 
+<a name="iesort"></a>
 ### Inefficient Sorts
 
+
+<a name="ssort"></a>
 #### Selection Sort
 
 
-
+<a name="bsort"></a>
 #### Bubble Sort
 
 

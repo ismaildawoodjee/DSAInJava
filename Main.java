@@ -3,6 +3,8 @@ import DataStructures.DynamicArray;
 import DataStructures.Queue;
 import DataStructures.Stack;
 
+import Algos.LinearSearch;
+
 /**
  * Main
  */
@@ -73,6 +75,11 @@ public class Main {
         // System.out.println(bst.remove(75));
         // System.out.println(bst.height());
 
-        
+        int[] data = new int[] {10, 5, 2, 0, 9, 6, 8, 1, 14, 3, 4, 7};
+        int target = 4;
+
+        LinearSearch ls = new LinearSearch();
+        boolean result = ls.search(data, target);
+        System.out.println(result);
     }
 }

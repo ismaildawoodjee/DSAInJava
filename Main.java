@@ -4,6 +4,7 @@ import DataStructures.Queue;
 import DataStructures.Stack;
 
 import Algos.LinearSearch;
+import Algos.BinarySearch;
 
 /**
  * Main
@@ -75,11 +76,20 @@ public class Main {
         // System.out.println(bst.remove(75));
         // System.out.println(bst.height());
 
-        int[] data = new int[] {10, 5, 2, 0, 9, 6, 8, 1, 14, 3, 4, 7};
-        int target = 4;
+        int[] lsData = new int[] {10, 5, 2, 0, 9, 6, 8, 1, 14, 3, 4, 7};
+        int lsTarget = 4;
 
         LinearSearch ls = new LinearSearch();
-        boolean result = ls.search(data, target);
+        boolean result = ls.search(lsData, lsTarget);
         System.out.println(result);
+
+        int[] bsData = new int[] {-3,-2,-1,0,1,1,  2,  3,5,8,13,21,34};
+        int[] bsData2 = new int[] {-3,-2,-1,0,1,1,  2,  3,5,8,13,21,34,55};
+
+        BinarySearch bs = new BinarySearch();
+        System.out.println(bs.search(bsData, 3));
+        System.out.println(bs.search(bsData, 12));
+        System.out.println(bs.search(bsData2, 3));
+        System.out.println(bs.search(bsData2, 12));
     }
 }

@@ -1,6 +1,5 @@
 
 data = [10, 5, 2, 0, 9, 6, 8, 1, 14, 3, 4, 7]
-target = 11
 
 # linear search
 def linear_search(data, target):
@@ -18,5 +17,6 @@ def linear_search(data, target):
     print(f"Item {target} not found")
     return False
     
-linear_search(data=data, target=target)
+linear_search(data=data, target=4)
+linear_search(data=data, target=11)
 

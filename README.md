@@ -355,6 +355,16 @@ entire data structure needs to be searched before the target element is found.
 
 ### Binary Search
 
+**Binary search** is intended only for sorted arrays. At each step of the
+search process, a comparison is made between the median element of the array
+and the target element. If the median element is greater than the target, the
+greater half of the array is discarded, and the next step looks at the smaller
+half of the array. Vice versa if the median element is smaller than the target.
+
+**Complexity** is `O(log n)`: because at each step, we are removing one-half of
+the search space that we need to look for (more accurately, the logarithm is in
+base 2). Binary search can be implemented both iteratively and recursively.
+
 ### Breadth-First Search
 
 ### Depth-First Search
